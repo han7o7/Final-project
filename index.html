@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarFixHelper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      background-color: #444;
+      color: #fff;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      padding: 1rem;
+      background: #fff;
+      margin: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .search-bar {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+    .search-bar input {
+      flex: 1;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+    }
+    .search-bar button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background-color: #28a745;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 0 4px 4px 0;
+    }
+    .features {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .feature {
+      flex: 1 1 calc(50% - 1rem);
+      background: #e9ecef;
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .feature:hover {
+      background: #dee2e6;
+    }
+    .feature a {
+      display: block;
+      margin-top: 0.5rem;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .feature img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    footer {
+      margin: 2rem 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CarFixHelper</h1>
+    <p>Your simple guide to basic car repairs</p>
+  </header>
+
+  <div class="container">
+    <!-- Search Feature -->
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search Wikipedia for car repairs...">
+      <button id="search-btn">Search</button>
+    </div>
+
+    <!-- Four Basic Repair Tabs / Features -->
+    <div class="features">
+      <!-- Feature 1: Engine Repair -->
+      <div class="feature">
+        <h3>Engine Repair</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Car_engine.jpg/320px-Car_engine.jpg" alt="Car Engine">
+        <a href="https://en.wikipedia.org/wiki/Engine_repair" target="_blank">Learn how to fix your engine</a>
+      </div>
+      <!-- Feature 2: Brake Repair -->
+      <div class="feature">
+        <h3>Brake Maintenance</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Car_brake_disc.jpg/320px-Car_brake_disc.jpg" alt="Brake Disc">
+        <a href="https://en.wikipedia.org/wiki/Brake_maintenance" target="_blank">Learn brake maintenance</a>
+      </div>
+      <!-- Feature 3: Battery Replacement -->
+      <div class="feature">
+        <h3>Battery Replacement</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Car_battery.jpg/320px-Car_battery.jpg" alt="Car Battery">
+        <a href="https://en.wikipedia.org/wiki/Car_battery" target="_blank">Learn how to replace a battery</a>
+      </div>
+      <!-- Feature 4: Tire Maintenance -->
+      <div class="feature">
+        <h3>Tire Care</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Car_tire.jpg/320px-Car_tire.jpg" alt="Car Tire">
+        <a href="https://en.wikipedia.org/wiki/Tire_maintenance" target="_blank">Learn tire care tips</a>
+      </div>
+    </div>
+
+    <!-- Additional Images -->
+    <div>
+      <h3>Tips & Tricks</h3>
+      <img src="https://via.placeholder.com/600x200?text=DIY+Car+Fixes" alt="DIY Car Fixes">
+      <p>Find simple DIY fixes and maintenance tips to keep your car running smoothly.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 CarFixHelper. Designed for GitHub Pages deployment.</p>
+  </footer>
+
+  <script>
+    document.getElementById('search-btn').addEventListener('click', function() {
+      const query = document.getElementById('search-input').value.trim();
+      if (query) {
+        const url = 'https://en.wikipedia.org/w/index.php?search=' + encodeURIComponent(query + ' repair');
+        window.open(url, '_blank');
+      }
+    });
+  </script>
+</body>
+</html>
